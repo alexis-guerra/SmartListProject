@@ -20,8 +20,9 @@
         android:layout_height="wrap_content"
         android:text="Bienvenido ¿Listo para tus compras?"
         android:textAlignment="center"
+        android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteX="73dp"
         tools:layout_editor_absoluteY="108dp" />
 
     <TextView
@@ -29,8 +30,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Introduce tu Correo Electronico"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="204dp" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="200dp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -39,7 +44,8 @@
         android:ems="10"
         android:hint="Correo Electronico"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="61dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="230dp" />
 
     <TextView
@@ -48,6 +54,8 @@
         android:layout_height="wrap_content"
         android:text="Introduce tu contraseña"
         android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="293dp" />
 
@@ -59,7 +67,8 @@
         android:hint="**********"
         android:inputType="textPassword"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="61dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="320dp" />
 
     <TextView
@@ -67,8 +76,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirmar Contraseña"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="379dp" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="381dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -78,14 +89,21 @@
         android:hint="**********"
         android:inputType="textPassword"
         android:textAlignment="textStart"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="407dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="412dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrarse"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="475dp" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        app:layout_constraintVertical_bias="0.2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
