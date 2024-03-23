@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity implements  SearchView.OnQue
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.registro);
 
         txtBuscar=findViewById(R.id.txtBuscar);
 
