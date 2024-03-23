@@ -1,22 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-
-    android:fitsSystemWindows="true"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
+    android:background="#57EAE8"
+    >
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="end"
         android:background="#242424"
         app:itemBackground="#ffffff"
-        app:itemTextColor="#ffffff"
         app:itemIconTint="#ffffff"
-        app:menu="@menu/main_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:itemTextColor="#ffffff"
+        app:menu="@menu/main_menu"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="583dp" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="544dp"
+        android:background="#DAD5D5"
+        android:text="Tiendas Cerca de ti"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <SearchView
+        android:layout_width="338dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="16dp"></SearchView>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:text="Ver productos"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="148dp"
+        android:layout_height="73dp"
+        app:srcCompat="@drawable/calimax_logo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="168dp"
+        android:layout_height="75dp"
+        app:srcCompat="@drawable/dawdwad"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver productos"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="168dp"
+        android:layout_height="77dp"
+        app:srcCompat="@drawable/imagen_2024_03_22_214208024_removebg_preview"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver productos"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="312dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="104dp"
+        android:layout_height="167dp"
+        app:srcCompat="@drawable/imagen_2024_03_22_214317954_removebg_preview"
+        tools:layout_editor_absoluteX="212dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver productos"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

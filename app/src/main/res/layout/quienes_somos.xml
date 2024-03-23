@@ -42,4 +42,26 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="351dp"
+        android:layout_height="264dp"
+        android:text="Bienvenido a SmartList, la aplicación que hará más fácil gestionar tus listas de compras. Entendemos lo complicado que puede ser mantenerse organizado con tantos deberes, por eso hemos creado una herramienta intuitiva y eficiente para facilitar tus compras y planificación. "
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="380dp"
+        android:layout_height="214dp"
+        android:text="Únete a nuestra comunidad de usuarios satisfechos y descubre por qué SmartList es la aplicación fundamental para tus listas de compras y más. "
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="560dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
