@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "559883412013",
+    "project_id": "smartlist-50804",
+    "storage_bucket": "smartlist-50804.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559883412013:android:c8ee331ff7c3950a748ea4",
+        "android_client_info": {
+          "package_name": "com.example.smartlist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8mdhdvMxlhYr1wF2c1nn3z49F8ID5oRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,18 +11,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.smartlist.Domain.CategoryDomain;
+import com.example.smartlist.Domain.CloseStoresDomain;
 import com.example.smartlist.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class CategoryAdapter  extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
-    ArrayList<CategoryDomain> categoryDomains;
+public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.ViewHolder> {
+    ArrayList<CloseStoresDomain> closeStoresDomains;
 
-    public CategoryAdapter(ArrayList<CategoryDomain> categoryDomains) {
-        this.categoryDomains = categoryDomains;
+    public StoresAdapter(ArrayList<CloseStoresDomain> closeStoresDomains) {
+        this.closeStoresDomains = closeStoresDomains;
     }
 
     @NonNull
@@ -34,23 +32,23 @@ public class CategoryAdapter  extends RecyclerView.Adapter<CategoryAdapter.ViewH
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(categoryDomains.get(position).getTitle());
+        holder.categoryName.setText(closeStoresDomains.get(position).getTitle());
         String picUrl = "";
         switch (position) {
             case 0: {
-                picUrl = "cat_1";
+                picUrl = "sterenlogo";
                 break;
             }
             case 1: {
-                picUrl = "cat_2";
+                picUrl = "walmartlogoremoveb";
                 break;
             }
             case 2: {
-                picUrl = "cat_3";
+                picUrl = "costcoremoveb";
                 break;
             }
             case 3: {
-                picUrl = "cat_4";
+                picUrl = "bestbuylogo";
                 break;
             }
         }
@@ -61,7 +59,7 @@ public class CategoryAdapter  extends RecyclerView.Adapter<CategoryAdapter.ViewH
 
     @Override
     public int getItemCount() {
-        return categoryDomains.size();
+        return closeStoresDomains.size();
     }
     public class ViewHolder extends  RecyclerView.ViewHolder{
     TextView categoryName;

@@ -1,10 +1,10 @@
 package com.example.smartlist.Domain;
 
-public class CategoryDomain {
+public class CloseStoresDomain {
     String title;
     String pic;
 
-    public CategoryDomain(String title, String pic) {
+    public CloseStoresDomain(String title, String pic) {
         this.title = title;
         this.pic = pic;
     }

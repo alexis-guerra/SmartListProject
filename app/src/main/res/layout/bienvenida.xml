@@ -51,6 +51,7 @@
         android:background="#00FFFFFF"
         android:text="Saltar"
         android:textAllCaps="true"
+        android:textColor="#000000"
         tools:layout_editor_absoluteX="303dp"
         tools:layout_editor_absoluteY="16dp" />
 

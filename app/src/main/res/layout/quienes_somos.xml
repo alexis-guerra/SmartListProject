@@ -12,6 +12,7 @@
         android:background="#00FFFFFF"
         android:text="Saltar"
         android:textAllCaps="true"
+        android:textColor="#000000"
         tools:layout_editor_absoluteX="303dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -51,8 +52,8 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="268dp" />
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="260dp" />
 
     <TextView
         android:id="@+id/textView13"
@@ -62,6 +63,6 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="560dp" />
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="555dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

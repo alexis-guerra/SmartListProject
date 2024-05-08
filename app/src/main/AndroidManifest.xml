@@ -13,23 +13,20 @@
         android:theme="@style/Theme.SmartList"
         tools:targetApi="31">
         <activity
-            android:name=".ListasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ListasActivity2"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActivity"
-            android:exported="false">
+            android:exported="true" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity.MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

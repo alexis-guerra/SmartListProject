@@ -1,25 +1,25 @@
 package com.example.smartlist.Activity;
 
-import static android.os.Build.VERSION_CODES.R;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.os.RecoverySystem;
 import android.view.View;
-import android.widget.SearchView;
 
-import com.example.smartlist.Adapter.CategoryAdapter;
-import com.example.smartlist.Domain.CategoryDomain;
+import com.example.smartlist.Adapter.ProductsAdapter;
+import com.example.smartlist.Adapter.StoresAdapter;
+import com.example.smartlist.Domain.CloseProductsDomain;
+import com.example.smartlist.Domain.CloseStoresDomain;
 import com.example.smartlist.R;
 
 import java.util.ArrayList;
 
+import dalvik.annotation.optimization.FastNative;
+
 public class MainActivity extends AppCompatActivity{
 private RecyclerView.Adapter adapter,adapter2;
-private RecyclerView recyclerViewCategory,recyclerViewPopularList;
+private RecyclerView recyclerViewCategory,recyclerViewProductsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +28,34 @@ private RecyclerView recyclerViewCategory,recyclerViewPopularList;
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
         recyclerViewCategory();
+        recyclerViewProductsList();
     }
-private void recyclerViewCategory(){
+
+    private void recyclerViewProductsList() {
+        LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewProductsList=findViewById(com.example.smartlist.R.id.view2);
+        recyclerViewProductsList.setLayoutManager(linearLayoutManager);
+
+        ArrayList<CloseProductsDomain>closeProductsDomains=new ArrayList<>();
+        closeProductsDomains.add(new CloseProductsDomain("Laptop","laptop","5000"));
+        closeProductsDomains.add(new CloseProductsDomain("Computadora","desktop","15000"));
+
+        adapter2=new ProductsAdapter(closeProductsDomains);
+        recyclerViewProductsList.setAdapter(adapter2);
+    }
+
+    private void recyclerViewCategory(){
     LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
     recyclerViewCategory=findViewById(com.example.smartlist.R.id.view1);
     recyclerViewCategory.setLayoutManager(linearLayoutManager);
 
-    ArrayList<CategoryDomain>categoryList=new ArrayList<>();
-    categoryList.add(new CategoryDomain("Pizza","cat_1"));
-    categoryList.add(new CategoryDomain("Hamburguesa","cat_2"));
-    categoryList.add(new CategoryDomain("Pollo","cat_3"));
-    categoryList.add(new CategoryDomain("Hotdogs","cat_4"));
+    ArrayList<CloseStoresDomain>categoryList=new ArrayList<>();
+    categoryList.add(new CloseStoresDomain("Steren","sterenlogo"));
+    categoryList.add(new CloseStoresDomain("Walmart","walmartlogoremoveb"));
+    categoryList.add(new CloseStoresDomain("Costco","costcoremoveb"));
+    categoryList.add(new CloseStoresDomain("BestBuy","bestbuylogo"));
 
-    adapter=new CategoryAdapter(categoryList);
+    adapter=new StoresAdapter(categoryList);
     recyclerViewCategory.setAdapter(adapter);
 }
 
