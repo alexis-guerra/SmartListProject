@@ -1,62 +1,79 @@
 package com.example.smartlist.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.smartlist.Adapter.ProductsAdapter;
-import com.example.smartlist.Adapter.StoresAdapter;
-import com.example.smartlist.Domain.CloseProductsDomain;
-import com.example.smartlist.Domain.CloseStoresDomain;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+
+import com.example.smartlist.Adapter.CategoryAdapter;
+import com.example.smartlist.Adapter.SliderAdapter;
+import com.example.smartlist.Domain.Category;
+import com.example.smartlist.Domain.SliderItems;
 import com.example.smartlist.R;
+import com.example.smartlist.databinding.ActivityMainBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.util.ArrayList;
 
-import dalvik.annotation.optimization.FastNative;
 
-public class MainActivity extends AppCompatActivity{
-private RecyclerView.Adapter adapter,adapter2;
-private RecyclerView recyclerViewCategory,recyclerViewProductsList;
+public class MainActivity extends BaseActivity {
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.example.smartlist.R.layout.activity_main);
-        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        recyclerViewCategory();
-        recyclerViewProductsList();
+
+        initCategory();
+        setVariable();
     }
 
-    private void recyclerViewProductsList() {
-        LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        recyclerViewProductsList=findViewById(com.example.smartlist.R.id.view2);
-        recyclerViewProductsList.setLayoutManager(linearLayoutManager);
 
-        ArrayList<CloseProductsDomain>closeProductsDomains=new ArrayList<>();
-        closeProductsDomains.add(new CloseProductsDomain("Laptop","laptop","5000"));
-        closeProductsDomains.add(new CloseProductsDomain("Computadora","desktop","15000"));
 
-        adapter2=new ProductsAdapter(closeProductsDomains);
-        recyclerViewProductsList.setAdapter(adapter2);
+    private void setVariable() {
+        binding.bottomMenu.setItemSelected(R.id.inicio, true);
+        binding.bottomMenu.setOnItemSelectedListener(i -> {
+            if(i==R.id.carrito){
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
     }
 
-    private void recyclerViewCategory(){
-    LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
-    recyclerViewCategory=findViewById(com.example.smartlist.R.id.view1);
-    recyclerViewCategory.setLayoutManager(linearLayoutManager);
+    private void initCategory() {
+        DatabaseReference myRef = database.getReference("Category");
+        binding.progressBarCategory.setVisibility(View.VISIBLE);
+        ArrayList<Category> list = new ArrayList<>();
 
-    ArrayList<CloseStoresDomain>categoryList=new ArrayList<>();
-    categoryList.add(new CloseStoresDomain("Steren","sterenlogo"));
-    categoryList.add(new CloseStoresDomain("Walmart","walmartlogoremoveb"));
-    categoryList.add(new CloseStoresDomain("Costco","costcoremoveb"));
-    categoryList.add(new CloseStoresDomain("BestBuy","bestbuylogo"));
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        list.add(issue.getValue(Category.class));
+                    }
+                    if (list.size() > 0) {
+                        binding.categoryView.setLayoutManager(new GridLayoutManager(MainActivity.this, 3));
+                        binding.categoryView.setAdapter(new CategoryAdapter(list));
+                    }
+                    binding.progressBarCategory.setVisibility(View.GONE);
+                }
+            }
 
-    adapter=new StoresAdapter(categoryList);
-    recyclerViewCategory.setAdapter(adapter);
-}
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+    }
 }

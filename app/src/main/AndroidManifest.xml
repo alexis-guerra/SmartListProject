@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SmartList"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity

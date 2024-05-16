@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/inicio"
+        android:icon="@drawable/btn_1"
+        android:title="Inicio"
+        app:cnb_backgroundColor="@color/red"
+        app:cnb_iconColor="@color/white" />
+    <item
+        android:id="@+id/listas"
+        android:icon="@mipmap/ic_lista"
+        android:title="Listas"
+        app:cnb_backgroundColor="@color/red"
+        app:cnb_iconColor="@color/white" />
+    <item
+        android:id="@+id/carrito"
+        android:icon="@drawable/btn_3"
+        android:title="Carrito"
+        app:cnb_backgroundColor="@color/red"
+        app:cnb_iconColor="@color/white" />
+    <item
+        android:id="@+id/perfil"
+        android:icon="@drawable/btn_4"
+        android:title="Perfil"
+        app:cnb_backgroundColor="@color/red"
+        app:cnb_iconColor="@color/white" />
+</menu>
