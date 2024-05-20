@@ -32,7 +32,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     @Override
     public ProductsListAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        return new viewholder(LayoutInflater.from(context).inflate(R.layout.viewholder_list_food, parent, false));
+        return new viewholder(LayoutInflater.from(context).inflate(R.layout.viewholder_list_products, parent, false));
     }
 
     @Override

@@ -4,48 +4,40 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.CompositePageTransformer;
-import androidx.viewpager2.widget.MarginPageTransformer;
-
-import com.example.smartlist.Adapter.CategoryAdapter;
-import com.example.smartlist.Adapter.SliderAdapter;
-import com.example.smartlist.Domain.Category;
-import com.example.smartlist.Domain.SliderItems;
-import com.example.smartlist.R;
 import com.example.smartlist.databinding.ActivityMainBinding;
+import com.example.smartlist.Adapter.CategoryAdapter;
+import com.example.smartlist.Domain.Category;
+import com.example.smartlist.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.ismaeldivita.chipnavigation.ChipNavigationBar;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
         initCategory();
         setVariable();
     }
-
-
 
     private void setVariable() {
         binding.bottomMenu.setItemSelected(R.id.inicio, true);
         binding.bottomMenu.setOnItemSelectedListener(i -> {
             if(i==R.id.carrito){
                 startActivity(new Intent(MainActivity.this, CartActivity.class));
+            } else if (i==R.id.listas) {
+                startActivity(new Intent(MainActivity.this, ListsActivity.class));
             }
         });
     }
@@ -76,4 +68,5 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
 }

@@ -13,7 +13,25 @@
         android:theme="@style/Theme.SmartList"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.ListData"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ListsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.DetailedListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.CartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ListProductsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BaseActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
@@ -26,7 +44,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
