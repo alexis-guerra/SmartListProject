@@ -1,0 +1,38 @@
+name: CI Pipeline
+
+# Define los eventos que activan el pipeline
+on:
+  push:
+    branches:
+      - main  # Activar el pipeline cuando se haga push a la rama main
+  pull_request:
+    branches:
+      - main  # Activar para solicitudes de pull
+
+# Define los trabajos del pipeline
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Usa un contenedor Ubuntu como entorno de ejecución
+
+    steps:
+      # Paso 1: Checkout del código
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Paso 2: Configuración del entorno
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'  # Cambia según la versión requerida por tu proyecto
+
+      # Paso 3: Compilar y ejecutar pruebas
+      - name: Build and test
+        run: |
+          ./gradlew build test  # Ajusta este comando según tu proyecto
+
+      # Paso 4: Análisis estático de código
+      - name: Static Code Analysis with SonarQube
+        run: |
+          ./gradlew sonarqube -Dsonar.login=$SONAR_TOKEN  # Usar el token de SonarQube
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Carga el token de secretos de GitHub
