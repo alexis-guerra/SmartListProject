@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "388049451737",
-    "project_id": "smarlist-19694",
-    "storage_bucket": "smarlist-19694.appspot.com"
+    "project_number": "726364794039",
+    "firebase_url": "https://smartlistproject-default-rtdb.firebaseio.com",
+    "project_id": "smartlistproject",
+    "storage_bucket": "smartlistproject.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:388049451737:android:2ac941de63acc5f1da9cc8",
+        "mobilesdk_app_id": "1:726364794039:android:8a49494262d44a25647132",
         "android_client_info": {
           "package_name": "com.example.smartlist"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCEymYE04PvL5wXShg16KZTnMjIv7JYYZw"
+          "current_key": "AIzaSyDONHBRNYBFNdTA6y1HKklYv5qbJX9BTt0"
         }
       ],
       "services": {
