@@ -12,7 +12,7 @@ import com.example.smartlist.Helper.ManagmentCart;
 import com.example.smartlist.databinding.ActivityDetailBinding;
 
 public class DetailActivity extends BaseActivity {
-    ActivityDetailBinding binding;
+    public ActivityDetailBinding binding;
     private Stores object;
     private int num = 1;
     private ManagmentCart managmentCart;
