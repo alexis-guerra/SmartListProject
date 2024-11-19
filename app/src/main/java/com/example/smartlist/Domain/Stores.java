@@ -18,7 +18,7 @@ public class Stores implements Serializable {
     private String Title;
     private int numberInCart;
 
-    public Stores() {
+    public Stores(String testStore, String testDescription, String url, double v, double v1) {
     }
 
     public int getCategoryId() {
